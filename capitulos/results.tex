@@ -1,0 +1,137 @@
+\chapter{Resultados Preliminares}
+Em muitos casos, a construção de um modelo de classificação tende a ser um processo árduo, que costuma ser dividido entre inúmeras tentativas até que um resultado satisfatório seja obtido. Nesta capítulo, nós apresentamos para as etapas definidas anteriormente, as primeiras tentativas de construção do modelo de classificação que contribua com a entrada de novatos em projetos de software livre por meio da identificação de trechos em arquivos de documentação.
+
+\section{Definição das categorias}
+Na Tabela \ref{tab:categories}, apresentamos um conjunto preliminar de sete categorias que gostaríamos de identificar nas documentações dos projetos de software livre. Estas categorias foram definidas com base nos artigos X, Y e Z, que identificam problemas que novatos usualmente enfrentam neste contexto. As categorias estabelecidas devem contribuir com todo o processo de contribuição do novato, da compreensão do projeto à submissão das mudanças feitas no código fonte. Estas categorias foram usadas durante as primeiras execuções do experimento, descritas na Seção W.
+
+\begin{table}
+\caption{Categorias a serem identificadas}
+\label{tab:categories}
+\centering
+\small
+\begin{tabularx}{\textwidth}{>{\hsize=0.2\hsize}X >{\hsize=0.80\hsize}X}
+\midrule
+\textbf{Categoria} & \textbf{Descrição} \\
+\midrule
+Compreender o fluxo de contribuição (CF) & Não é incomum que os recém-chegados se sintam perdidos ou desmotivados quando não está claro como contribuir com um projeto de software livre. Para esta categoria, gostaríamos de identificar trechos de documentação que descrevam qual é o fluxo de contribuição de um projeto. O fluxo de contribuição pode ser definido como um conjunto de etapas que um recém-chegado precisa seguir para desenvolver uma contribuição aceitável para o projeto. 
+\\
+\rowcolor{gray} Escolher uma tarefa (ET) & Muitos desenvolvedores estão interessados em contribuir com projetos de software livre, mas a maioria deles não sabe com qual tarefa começar. Nesta categoria, gostaríamos de identificar frases descrevendo como os recém-chegados podem encontrar uma tarefa para contribuir com o projeto.
+\\
+Encontrar um mentor (EM) & Em grande parte dos projetos de software livre, mentores são designados para ajudar os recém-chegados durante o processo de contribuição. Para esta categoria, gostaríamos de identificar informações sobre como os recém-chegados podem encontrar pessoas no projeto para atuar como possíveis mentores.
+\\
+\rowcolor{gray} Contactar a comunidade (CC) & Além de um mentor, também é importante que os recém-chegados entrem em contato com a própria comunidade do projeto. Por esse motivo, gostaríamos de identificar qualquer informação que descreva como um recém-chegado pode entrar em contato com os membros da comunidade, incluindo links para canais de comunicação, tutoriais sobre como enviar uma mensagem, etiquetas de comunicação, entre outros.
+\\
+Construir o ambiente de trabalho (CA) & Os recém-chegados relataram em estudos anteriores que não encontraram explicações sobre como poderiam construir seu próprio ambiente de trabalho (construir, compilar, executar, gerenciar dependências, etc.) antes de contribuir. Gostaríamos de identificar seções na documentação que definam as etapas que um novato deve seguir para construir um ambiente de trabalho local.
+\\
+\rowcolor{gray} Lidar com código (LC) & Muitos projetos têm seus próprios padrões de código, arquiteturas e práticas de software. Nesta categoria, gostaríamos de identificar seções  na documentação descrevendo como o código deve ser escrito, organizado e documentado. \\
+Submeter mudanças (SM) & O último passo no processo de contribuição é a submissão de mudanças. Nesta categoria, gostaríamos de identificar informações sobre como a submissão de alteração (em inglês, patch) deve ser feita.
+\end{tabularx}
+\end{table}
+
+\section{Seleção dos projetos}
+Utilizando como referência o estudo proposto por \citet{avelino2015truck}, as documentações de noventa e seis projetos de software livre foram coletadas para análise. Todas, de acordo com o artigo, com \textit{fator ônibus} menor ou igual a três. Visto que os projetos selecionados estavam hospedados na plataforma de codificação \textit{GitHub}, as documentações foram extraídas por meio da \textit{GitHub API}, um serviço da própria plataforma que fornece informações sobre os repositórios de código hospedados. Considerando que o objetivo desta pesquisa se concentra em investigar arquivos \textit{README} e \textit{CONTRIBUTING}, projetos que não continham ambos os arquivos, ou que continham os arquivos porém  estes estavam vazios, foram removidos da lista de seleção. Ao final, cinquenta e dois projetos foram selecionados para uso durante o experimento. O conjunto de projetos selecionados está disposto na Tabela \ref{tab:projetos-selecionados}.
+
+\begin{table}
+\caption{Projetos selecionados para utilização no experimento,  organizados por fator ônibus}
+\label{tab:projetos-selecionados}
+\centering
+\small
+\begin{tabularx}{\textwidth}{>{\hsize=0.05\hsize}X >{\hsize=0.95\hsize}X}
+\midrule
+\textbf{Fator} & \textbf{Projetos} \\
+\midrule
+1 & 
+\texttt{
+atom/atom-shell,
+bjorn/tiled,
+bumptech/glide,
+celery/celery,
+celluloid/celluloid,
+dropwizard/dropwizard,
+erikhuda/thor,
+github/android,
+gruntjs/grunt,
+kivy/kivy,
+leaflet/leaflet,
+less/less.js,
+mailpile/mailpile,
+mitchellh/vagrant,
+mitsuhiko/flask,
+powerline/powerline,
+puphpet/puphpet,
+reactivex/rxjava,
+sass/sass,
+sebastianbergmann/phpunit,
+sferik/twitter,
+thoughtbot/factory$\_$girl,
+thoughtbot/paperclip,
+wp-cli/wp-cli}
+\\
+\rowcolor{gray}
+2 &
+\texttt{activeadmin/activeadmin,
+ajaxorg/ace,
+ansible/ansible,
+apache/cassandra,
+bup/bup,
+clojure/clojure,
+composer/composer,
+cucumber/cucumber,
+driftyco/ionic,
+elasticsearch/logstash,
+facebook/osquery,
+facebook/presto,
+friendsofphp/php-cs-fixer,
+github/linguist,
+itseez/opencv,
+jashkenas/backbone,
+jquery/jquery-ui,
+libgdx/libgdx,
+meskyanichi/backup,
+netty/netty,
+openframeworks/openframeworks,
+plataformatec/devise,
+prawnpdf/prawn,
+pydata/pandas,
+strongloop/express,
+thumbor/thumbor,
+xetorthio/jedis}
+\\
+3 &
+\texttt{bbatsov/rubocop,
+bitcoin/bitcoin,
+divio/django-cms,
+jnicklas/capybara,
+mozilla/pdf.js,
+rg3/youtube-dl,
+mrdoob/three.js,
+yiisoft/yii2}
+\end{tabularx}
+\end{table}
+
+\section{Execução do experimento}
+Após a seleção dos projetos e extração das documentações, os arquivos \textit{README} e \textit{CONTRIBUTING} de cada um dos projetos foram convertidos em planilhas para marcação das categorias pelos alunos. A organização e quebra dos parágrafos em planilhas foi feita de maneira manual pelo pesquisador responsável pelo experimento. Na sequência, um tutorial descrevendo o processo de execução do experimento foi escrito, contendo uma breve introdução ao trabalho proposto, a descrição das categorias a serem identificadas, instruções sobre como a identificação deveria ser feita, e sobre como as planilhas analisadas deveriam ser submetidas novamente ao responsável pela pesquisa.  
+
+O experimento proposto já foi executado em duas instituições de ensino, na Universidade de São Paulo (USP) e na Universidade Federal do Pará (UFPA), ambas as execuções durante as disciplinas de Desenvolvimento de Software Livre. A primeira versão do experimento foi aplicada para os alunos da UFPA. Por conta do número de computadores disponíveis na instituição, os alunos foram divididos em um total de quarenta e três duplas, sendo que cada dupla teve aproximadamente duas horas em sala de aula para analisar um único projeto de software livre. Todas as duplas terminaram o experimento, resultando em quarenta e três planilhas analisadas. Com auxílio do professor responsável pela disciplina, modificações foram feitas no processo de execução do experimento, a fim de aprimorar as dificuldades enfrentadas pelos alunos da UFPA durante a execução em sala.
+
+Para os alunos da USP, o experimento foi conduzido durante uma semana em que os alunos não tinham aula (popularmente conhecida na instituição como semana de \textit{break}). Com auxílio do professor responsável pela disciplina de desenvolvimento, os alunos foram instruídos uma semana antes da semana de \textit{break} sobre como o experimento deveria ser realizado em casa. O tutorial e um \textit{email} para contato foram disponibilizados \textit{online} aos alunos, caso eles tivessem alguma dúvida. Nesta segunda versão do experimento, cada aluno ficou responsável por identificar as categorias em cinco projetos de software livre distintos, sendo que quinze alunos participaram do experimento, totalizando setenta e cinco planilhas analisadas. Todos foram convidados a submeter críticas ou sugestões para novas versões do experimento, porém nenhuma resposta quanto a isso foi recebida. 
+
+\section{Construção do modelo de classificação}
+Um modelo de classificação preliminar foi construído para cada um dos algoritmos mencionados no método deste estudo. Até o atual momento, apenas valores estatísticos foram utilizados. Todas as planilhas analisadas pelos alunos foram convertidas em características TF-IDF, utilizadas durante o treinamento dos classificadores.
+
+\section{Discussão dos resultados preliminares}
+
+\section{Publicações}
+A Lista \ref{list:publicacoes} apresenta as publicações realizadas pelo o aluno durante o período de vigência do mestrado. Todas as publicações, direta ou indiretamente, discutem problemas associados a contribuições em projetos de software livre.
+
+\begin{itemize}
+    \label{list:publicacoes}
+    \item \textbf{What Attract Newcomers to Onboard on OSS Projects? TL;DR Popularity} \\
+    International Conference on Open Source Systems (OSS'2019)
+    \item \textbf{Who gets a patch accepted first? Comparing the contributions of employees and volunteers} \\
+    International Workshop on Cooperative and Human Aspects of Software Engineering (CHASE'2018)
+    \item \textbf{On the challenges of open-sourcing proprietary software projects}\\
+    Empirical Software Engineering Journal (EMSE'2018)
+    \item \textbf{Who drives company-owned OSS projects: internal or external members?}\\
+    Journal of the Brazilian Computer Society (JBCS'2018)
+\end{itemize}
