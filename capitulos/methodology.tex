@@ -1,8 +1,11 @@
 \chapter{Metodologia}
-Levando em consideração as barreiras enfrentadas por novatos em software livre, em especial aquelas relacionadas a documentação dos projetos, propomos por meio desta metodologia um modelo de classificação que contribua com a identificação de informações relevantes a novos contribuidores em documentações de projetos de software livre. A metodologia proposta dá continuação a dois trabalhos preliminares \citep{fronchetti2019attracts, pinto2018challenges}, que investigam características relacionadas a comunidades de software livre. É válido mencionar que a elaboração deste método é baseada nos estudos de \citet{steinmacher2014preliminary}, que evidenciam a necessidade de uma ferramenta que auxilie novatos quanto a documentações de projetos de software livre, e \citet{panichella2015how}, que propõem um mecanismo de identificação de seções em documentações de software. 
+Levando em consideração as barreiras enfrentadas por novatos em software livre, em especial aquelas relacionadas a documentação dos projetos, propomos por meio desta metodologia um modelo de classificação que contribua com a identificação de informações em documentações relevantes a novos contribuidores. A metodologia proposta dá continuidade a um trabalho preliminar \citep{fronchetti2019attracts}, onde foram investigadas características que influenciam a atratividade de novatos em projetos de software livre. 
+
+A elaboração deste método é baseada em dois estudos relacionados, um deles proposto por \citet{steinmacher2014preliminary}, que evidenciam a necessidade de uma ferramenta que auxilie novatos na compreensão de documentações de projetos em de software livre, e outro proposto por \citet{panichella2015how}, que desenvolvem um método de identificação de seções em documentações de software, similar ao apresentado abaixo para este estudo. Este capítulo é divido em duas seções: Na Seção \ref{sec:questoes-de-pesquisa} são apresentadas e discutidas as questões de pesquisa deste estudo, e na Seção \ref{sec:metodo} é apresentado o método a ser executado.
 
 \section{Método}
-O método proposto para esta pesquisa é dividido em seis etapas, sendo que as cinco primeiras etapas já foram executadas. A primeira etapa consistiu em definir quais informações deveriam ser identificadas nas documentações de projetos de software livre. Para isso, um conjunto de categorias foi estabelecido. Este conjunto de categorias serviu para identificar quais informações eram relevantes a novatos na documentação de projetos de software livre. A segunda etapa consistiu na seleção de projetos utilizados como amostra para identificação de tais categorias. Neste  passo, aconteceu também a extração das documentações para os projetos que foram selecionados. Na terceira etapa, um estudo empírico foi proposto com novatos em software livre, e pesquisadores em engenharia de software. Este estudo serviu para popular uma base de dados com parágrafos que continham as categorias estabelecidas na etapa anterior. Por fim, um modelo de classificação foi elaborado com base nas informações coletadas durante o estudo empírico. A última etapa, ainda não executada, consistirá em avaliar os resultados das etapas anteriores por meio de métodos estatísticos, e um questionário a ser aplicados com novos contribuidores. Na Figura \ref{fig:metodo-pesquisa} é apresentada a sequência de atividades referentes ao método desta pesquisa.
+\label{sec:metodo}
+Para que seja possível responder as questões desta pesquisa, o método proposto é dividido em um conjunto de cinco etapas, sendo que as três primeiras etapas já foram executadas preliminarmente. A primeira etapa consistiu em definir quais informações relevantes a novos contribuidores deveriam ser identificadas nas documentações de projetos de software livre. Para isso, um conjunto de categorias associados a problemas que novatos enfrentam foi estabelecido. A segunda etapa se concentrou na seleção dos projetos a serem utilizados como amostra para identificação de tais categorias. Neste  passo, a extração das documentações para os projetos selecionados também foi executada. Na terceira etapa, um estudo empírico foi proposto com novatos em software livre. O estudo empírico serviu para popular uma base de dados com análises das documentações extraídas, feitas com base nas categorias estabelecidas na etapa anterior. Para o futuro, um modelo de classificação será elaborado e avaliado a partir das análises coletadas durante o estudo empírico, e uma avaliação dos resultados do modelo de classificação a ser construído será realizada, utilizando como artifício de avaliação métodos estatísticos, e questionários a serem aplicados a novos e experientes contribuidores em software livre. Na Figura \ref{fig:metodo-pesquisa}, é apresentada a sequência de atividades referentes ao método desta pesquisa. Apesar das três primeiras etapas já terem sido executadas preliminarmente, é importante ressaltar que todas elas estão abertas a reavaliação.
 
 \begin{figure}
     \includegraphics[width=0.9\textwidth]{figuras/metodo.pdf}
@@ -12,31 +15,134 @@ O método proposto para esta pesquisa é dividido em seis etapas, sendo que as c
 
 \subsection{Categorias}
 \label{sec:categorias}
-Para identificar trechos nas documentações de projetos de software livre que sejam relevantes a novos contribuidores, um conjunto de categorias serão elaboradas para que seja possível realizar a identificação. Estas categorias foram estabelecidas com base nas barreiras apresentadas pelo modelo de \citet{steinmacher2014preliminary}, e em demais trabalhos relacionados que identifiquem dificuldades que novatos enfrentam em software livre, em especial, estudos que identifiquem barreiras associadas a problemas de documentação nos projetos. Estas categorias servirão como identificadores dos trechos relevantes a novatos nas documentações, e serão utilizadas como as classes do estudo empírico e do modelo de aprendizagem. 
+Para identificar trechos relevantes a novos contribuidores nas documentações de projetos de software livre, um conjunto de categorias foram elaboradas de modo que fosse possível realizar a identificação. Estas categorias foram estabelecidas com base nas barreiras apresentadas pelo modelo de \citet{steinmacher2016overcoming}, e em demais trabalhos relacionados, que também identificaram dificuldades que novatos enfrentam neste contexto. As principais dificuldades enfatizadas nas categorias estabelecidas, foram aquelas passíveis de solução por meio da documentação dos projetos. Estas foram utilizadas durante a execução do estudo empírico (Seção \ref{sec:estudo-empirico}). Na Tabela \ref{tab:categories}, apresentamos o conjunto preliminar de sete categorias que gostaríamos de identificar nas documentações de projetos de software livre. Estas categorias devem contribuir com todo o processo de contribuição dos novatos, já que abrangem problemas importantes, como a compreensão do projeto, contato com a comunidade, e submissão de mudanças ao código fonte.
+
+\begin{table}
+\caption{Categorias estabelecidas para identificação
+}
+\label{tab:categories}
+\centering
+\small
+\begin{tabularx}{\textwidth}{>{\hsize=0.2\hsize}X >{\hsize=0.80\hsize}X}
+\midrule
+\textbf{Categoria} & \textbf{Descrição} \\
+\midrule
+Compreender o fluxo de contribuição (CF) & Não é incomum que os recém-chegados se sintam perdidos ou desmotivados quando não está claro como contribuir com um projeto de software livre. Para esta categoria, gostaríamos de identificar trechos de documentação que descrevam qual é o fluxo de contribuição de um projeto. O fluxo de contribuição pode ser definido como um conjunto de etapas que um recém-chegado precisa seguir para desenvolver uma contribuição aceitável para o projeto. 
+\\
+\rowcolor{gray} Escolher uma tarefa (ET) & Muitos desenvolvedores estão interessados em contribuir com projetos de software livre, mas a maioria deles não sabe com qual tarefa começar. Nesta categoria, gostaríamos de identificar frases descrevendo como os recém-chegados podem encontrar uma tarefa para contribuir com o projeto.
+\\
+Encontrar um mentor (EM) & Em grande parte dos projetos de software livre, mentores são designados para ajudar os recém-chegados durante o processo de contribuição. Para esta categoria, gostaríamos de identificar informações sobre como os recém-chegados podem encontrar pessoas no projeto para atuar como possíveis mentores.
+\\
+\rowcolor{gray} Contactar a comunidade (CC) & Além de um mentor, também é importante que os recém-chegados entrem em contato com a própria comunidade do projeto. Por esse motivo, gostaríamos de identificar qualquer informação que descreva como um recém-chegado pode entrar em contato com os membros da comunidade, incluindo links para canais de comunicação, tutoriais sobre como enviar uma mensagem, etiquetas de comunicação, entre outros.
+\\
+Construir o ambiente de trabalho (CA) & Os recém-chegados relataram em estudos anteriores que não encontraram explicações sobre como poderiam construir seu próprio ambiente de trabalho (construir, compilar, executar, gerenciar dependências, etc.) antes de contribuir. Gostaríamos de identificar seções na documentação que definam as etapas que um novato deve seguir para construir um ambiente de trabalho local.
+\\
+\rowcolor{gray} Lidar com código (LC) & Muitos projetos têm seus próprios padrões de código, arquiteturas e práticas de software. Nesta categoria, gostaríamos de identificar seções  na documentação descrevendo como o código deve ser escrito, organizado e documentado. \\
+Submeter mudanças (SM) & O último passo no processo de contribuição é a submissão de mudanças. Nesta categoria, gostaríamos de identificar informações sobre como a submissão de alteração (em inglês, patch) deve ser feita.
+\end{tabularx}
+\end{table}
 
 \subsection{Projetos}
 \label{sec:projetos}
-Considerando que a premissa principal deste estudo é conseguir identificar trechos em documentações de projetos de software livre, um conjunto de projetos neste será utilizado como amostra. A ideia é que os projetos sejam escolhidos a partir de um estudo proposto por \citet{avelino2015truck}, que classifica projetos populares em software livre de acordo com seu risco de sobrevivência, utilizando o \textit{fator ônibus}\footnote{O fator ônibus (do inglês, \textit{truck factor}), é uma medida de risco que investiga o quanto um determinado projeto de software depende de um número específico de pessoas. De modo geral, esse fator define quantas pessoas em um projeto precisam ser  ``atingidas por um ônibus'' para que o projeto fracasse ou se torne inativo.} dos projetos como métrica de avaliação. A justificativa para utilização dos projetos daquele artigo está no fato de que todos contém alto índice de popularidade, estão divididos em seis linguagens de programação bem estabelecidas (JavaScript, Python, Ruby, C/C++, Java e PHP), e contém um número considerável de desenvolvedores ativos trabalhando em uma diversidade de arquivos por repositório. Como a ideia é contribuir principalmente com comunidades que necessitam de novos contribuidores, projetos que contenham \textit{fator ônibus} menor ou igual a três deverão ser selecionados. Caso o número de projetos não seja suficiente para treinar o modelo de classificação, projetos com  \textit{fator ônibus} maior do que três também poderão ser utilizados. 
+Considerando que a premissa principal deste estudo é conseguir identificar trechos em documentações de projetos de software livre, um conjunto de projetos neste contexto foi selecionado como amostra. Os projetos foram escolhidos a partir de um estudo proposto por \citet{avelino2015truck}, que classifica projetos populares em software livre de acordo com seu risco de sobrevivência, utilizando o fator ônibus\footnote{O fator ônibus (do inglês, \textit{truck factor}), é uma medida de risco que investiga o quanto um determinado projeto de software depende de um número específico de pessoas. De modo geral, esse fator define quantas pessoas em um projeto precisam ser  ``atingidas por um ônibus'' para que o projeto fracasse ou se torne inativo.} dos projetos como métrica de avaliação. A justificativa para utilização dos projetos deste artigo está no fato de que todos contém alto índice de popularidade, estão divididos em seis linguagens de programação bem estabelecidas (JavaScript, Python, Ruby, C/C++, Java e PHP), e contém um número considerável de desenvolvedores ativos trabalhando em uma diversidade de arquivos por repositório. Como a ideia é contribuir principalmente com comunidades que necessitam de novos contribuidores, projetos que continham fator ônibus menor ou igual a três foram selecionados, gerando um total de noventa e seis projetos. 
 
-De cada um dos projetos, serão extraídos os arquivos README e CONTRIBUTING dos repositórios de código, considerados por diversos trabalhos relacionados e por diretrizes de projetos como as primeiras fontes de documentação apresentadas a novos contribuidores. Estes documentos serão os utilizados nas próximas etapas do estudo, em especial, durante a construção do modelo de classificação. A razão pela escolha destes arquivos, e não de outras fontes de documentação, se concentra no fato de que ambos apresentam informações relevantes a novos contribuidores, são de fácil extração, e são escritos escritos a partir de uma mesma sintaxe, o que pode facilitar o processo de identificação das categorias.
+De cada um dos projetos, foram extraídos os arquivos README e CONTRIBUTING dos repositórios de código fonte. A razão para escolha destes arquivos, e não de outras fontes de documentação, se concentra no fato de que ambos apresentam informações relevantes a novos contribuidores, são de fácil extração, e são escritos a partir de uma mesma sintaxe, o que facilita o processo de identificação automática das categorias. Visto que os projetos selecionados estavam hospedados na plataforma de codificação GitHub, as documentações acabaram sendo extraídas por meio da GitHub API\footnote{\url{developer.github.com}}, um serviço que fornece dados sobre repositórios de código hospedados nesta plataforma. Considerando que o objetivo desta pesquisa se concentra em investigar tanto os arquivos README como CONTRIBUTING, projetos que não continham ambos os arquivos, ou que continham os arquivos porém  estes estavam vazios, foram removidos da lista de seleção. Ao final da filtragem, restaram cinquenta e oito projetos, os quais foram selecionados para uso nas etapas posteriores. O conjunto final de projetos selecionados é apresentado na Tabela \ref{tab:projetos-selecionados}.
+
+\begin{table}
+\caption{Projetos selecionados para utilização}
+\label{tab:projetos-selecionados}
+\centering
+\small
+\begin{tabularx}{\textwidth}{>{\hsize=0.05\hsize}X >{\hsize=0.95\hsize}X}
+\midrule
+\textbf{Fator} & \textbf{Projetos} \\
+\midrule
+1 & 
+\texttt{
+atom/atom-shell,
+bjorn/tiled,
+bumptech/glide,
+celery/celery,
+celluloid/celluloid,
+dropwizard/dropwizard,
+erikhuda/thor,
+github/android,
+gruntjs/grunt,
+kivy/kivy,
+leaflet/leaflet,
+less/less.js,
+mailpile/mailpile,
+mitchellh/vagrant,
+mitsuhiko/flask,
+powerline/powerline,
+puphpet/puphpet,
+reactivex/rxjava,
+sass/sass,
+sebastianbergmann/phpunit,
+sferik/twitter,
+thoughtbot/factory$\_$girl,
+thoughtbot/paperclip,
+wp-cli/wp-cli}
+\\
+\rowcolor{gray}
+2 &
+\texttt{activeadmin/activeadmin,
+ajaxorg/ace,
+ansible/ansible,
+apache/cassandra,
+bup/bup,
+clojure/clojure,
+composer/composer,
+cucumber/cucumber,
+driftyco/ionic,
+elasticsearch/logstash,
+facebook/osquery,
+facebook/presto,
+friendsofphp/php-cs-fixer,
+github/linguist,
+itseez/opencv,
+jashkenas/backbone,
+jquery/jquery-ui,
+libgdx/libgdx,
+meskyanichi/backup,
+netty/netty,
+openframeworks/openframeworks,
+plataformatec/devise,
+prawnpdf/prawn,
+pydata/pandas,
+strongloop/express,
+thumbor/thumbor,
+xetorthio/jedis}
+\\
+3 &
+\texttt{bbatsov/rubocop,
+bitcoin/bitcoin,
+divio/django-cms,
+jnicklas/capybara,
+mozilla/pdf.js,
+rg3/youtube-dl,
+mrdoob/three.js,
+yiisoft/yii2}
+\end{tabularx}
+\end{table}
 
 \subsection{Estudo empírico}
 \label{sec:estudo-empirico}
-Durante a elaboração dos trabalhos relacionados, não foram constatados estudos ou ferramentas que identifiquem categorias relevantes a novatos em documentações de projetos de software livre. Por esta razão, um processo manual de identificação das categorias estabelecidas na primeira etapa deverá ser feito. Para isso, um estudo empírico será aplicado com novatos em software livre. Os novatos serão convidados a identificar trechos nas documentações de projetos de software livre que sejam relevantes a eles, utilizando como base as categorias e os projetos estabelecidos nas etapas anteriores. A produção do estudo será dividida em quatro partes: elaboração, produção do material tutorial, seleção dos participantes e execução.
+Durante a revisão dos trabalhos relacionados, não foram constatados estudos ou ferramentas que identificassem categorias relevantes a novatos em documentações de projetos de software livre. Por esta razão, um processo manual de identificação das categorias estabelecidas foi elaborado. Para realização do processo de identificação das categorias, novatos almejando contribuir com projetos de software livre foram convidados a identificarem trechos nas documentações dos projetos selecionados anteriormente, que fossem relevantes a eles, utilizando como base as categorias estabelecidas nesta pesquisa. A produção do estudo empírico foi dividida em três partes: elaboração, seleção dos participantes e execução.
 
 \subsubsection{Elaboração do estudo}
-Esse primeiro passo do estudo deverá acontecer em dois passos:
+O processo de elaboração do estudo foi realizado em duas etapas:
 \begin{itemize}
     \item \textbf{Organização dos documentos extraídos:}\\
-    Os documentos README e CONTRIBUTING dos projetos selecionados deverão ser organizados em planilhas. Cada planilha representará um projeto, e irá conter duas páginas, uma para cada um dos documentos. As páginas serão organizadas entre colunas: Na primeira coluna estarão os parágrafos da documentação coletada, divididos linha por linha, e nas colunas seguintes serão dedicados espaços separados para identificação das categorias. A Tabela \ref{tab:planilha} apresenta um exemplo de como cada uma das documentações deverão ser organizadas na planilha de cada um dos projetos.
+    Para facilitar a execução do estudo empírico, os documentos README e CONTRIBUTING dos projetos selecionados foram organizados em um conjunto de planilhas. Cada planilha, contendo duas páginas, uma para cada arquivo de documentação, representava um projeto de software livre. As páginas de cada planilha, foram organizadas em colunas. Na primeira coluna, se encontravam os parágrafos do respectivo arquivo de documentação que a página representava. Nas colunas seguintes, foram dedicados espaços separados para identificação das categorias relevantes a novatos, que foram marcados pelos participantes durante a execução do estudo empírico. A Tabela \ref{tab:planilha} apresenta um exemplo de como as páginas de cada planilha representando os projetos selecionados foram organizadas.  
     
     \item \textbf{Produção do tutorial:}\\ 
-    Para que os participantes do estudo tenham entendimento acerca do que deverá ser feito, um tutorial será preparado. Este tutorial deverá conter, ente outras coisas, a descrição das categorias estabelecidas na Seção \ref{sec:categorias}, a serem identificadas por eles durante o estudo, bem como os passos que cada participante deverá seguir durante o processo de identificação destas categorias nas documentações dos projetos. Todo o material produzido será disponibilizado publicamente em formato digital.
+    Para que os participantes do estudo tivessem entendimento acerca do que devia ser feito, um tutorial foi preparado. Este tutorial continha, ente outras coisas, a descrição das categorias estabelecidas na Seção \ref{sec:categorias}, a serem identificadas por eles durante o estudo, bem como os passos que cada participante deveria seguir durante o processo de identificação destas categorias nas documentações dos projetos. Todo o material tutorial produzido está disponibilizado publicamente online\footnote{\url{fronchetti.com.br/usp/experimento}}.
 \end{itemize}
 
 \begin{table}[]
 \small
-\caption[Exemplo de página contendo informações de um arquivo de documentação]{Exemplo de página contendo informações de um arquivo de documentação. Ao identificar uma categoria para um parágrafo, o participante deverá fazer uma marcação na respectiva coluna.}
+\caption[Exemplo de página contendo informações de um arquivo de documentação]{Exemplo de página contendo informações de um arquivo de documentação. Ao identificar uma categoria para um parágrafo, o participante  faz uma marcação em sua respectiva coluna.}
 \begin{tabular}{ccccc}
 \cline{1-3} \cline{5-5}
 \multicolumn{1}{|c|}{\cellcolor{gray} Parágrafos} & \multicolumn{1}{c|}{\cellcolor{gray} Categoria A} & \multicolumn{1}{c|}{\cellcolor{gray} Categoria B} & \multicolumn{1}{c|}{$\cdots$} & \multicolumn{1}{c|}{\cellcolor{gray} Categoria N} \\ \cline{1-3} \cline{5-5} 
@@ -49,20 +155,18 @@ $\vdots$ & $\vdots$ & $\vdots$ & & $\vdots$ \\ \cline{1-3} \cline{5-5}
 \end{table}
     
 \subsubsection{Seleção dos participantes}
-Tendo em vista que o alvo de contribuição deste estudo são novatos em software livre, apenas novos contribuidores serão convidados a participar da identificação das categorias. A ideia é que os novos contribuidores a serem convidados sejam alunos de ensino superior, inscritos em disciplinas de desenvolvimento de software livre. Considerando que em tais disciplinas, alunos tendem a contribuir com projetos reais de software livre, é possível considerar que os potenciais alunos participantes irão representar um grupo considerável de novos contribuidores neste contexto, por esta razão foi feita a escolha destes como parte de nossa amostra.
-
-Para que seja possível aplicar tal estudo, os responsáveis por esta pesquisa entrarão em contato com as instituições de ensino superior, passando por todos os trâmites burocráticos necessários, incluindo procedimentos éticos em relação ao uso de dados dos estudantes. Caso o número de alunos participantes alcançados não seja suficiente para execução, o mesmo estudo deverá ser proposto a outros grupos associados a software livre, como pesquisadores ou contribuidores ativos em projetos neste contexto.
+Tendo em vista que o alvo de contribuição deste estudo eram novatos em software livre, novos contribuidores foram convidados a participar da identificação das categorias. Os novatos convidados foram alunos de ensino superior, inscritos em disciplinas de desenvolvimento de software livre, que tinham como objetivo nas disciplinas contribuir para projetos neste contexto. Para que fosse possível aplicar o estudo empírico, os responsáveis por esta pesquisa entraram em contato com os professores de instituições de ensino superior, e solicitaram a aplicação do experimento com os alunos das disciplinas de software livre. Assim que a solicitação foi atendida por um grupo de professores, todos os trâmites legais, incluindo a avaliação do comitê de ética das universidades, foram realizados antes da execução do estudo empírico.
 
 \subsubsection{Execução do estudo}
-O estudo deverá ser executado pelos alunos como trabalho extraclasse. Cada participante, ao analisar uma página representando um arquivo de documentação, deverá ler os parágrafos na primeira coluna, identificar as categorias contidas em cada parágrafo lido, e fazer marcações nas colunas que representem as categorias identificadas por ele, iterativamente para cada um dos parágrafos, até o fim da documentação. A submissão das planilhas analisadas deverá acontecer por correio eletrônico diretamente aos responsáveis pelo estudo. Caso seja solicitado pela instituição de ensino, um termo de consentimento também deverá ser assinado pelos alunos participantes. 
+O estudo proposto foi executado em duas instituições de ensino, na Universidade de São Paulo (USP) e na Universidade Federal do Pará (UFPA). Ambas as execuções aconteceram durante as disciplinas de Desenvolvimento de Software Livre. A primeira versão do experimento foi aplicada para os alunos da UFPA. Por conta do número de computadores disponíveis na instituição, os alunos foram divididos em um total de quarenta e três duplas, sendo que cada dupla teve aproximadamente duas horas em sala de aula para analisar um único projeto de software livre. Todas as duplas terminaram o experimento no prazo determinado, resultando em quarenta e três planilhas analisadas. Com auxílio do professor responsável pela disciplina, dificuldades em relação ao experimento foram constatadas, e modificações foram feitas na elaboração do estudo, a fim de aprimorar a execução do experimento.
 
-Assim que a etapa de execução do estudo estiver finalizada, um cálculo de concordância estatística entre alunos que analisarem uma mesma planilha deverá ser feito. O cálculo de concordância contribuirá com a garantia estatística de que as análises dos alunos não tenham sido feitas de forma randômica, e que todos possivelmente compreenderam o estudo e o problema analisado. Como a codificação a ser feita neste estudo poderá envolver múltiplas categorias por parágrafo, o algoritmo Fuzzy Kappa será utilizado para o cálculo da concordância entre alunos \citep{kirilenko2016inter}. 
+Para os alunos da USP, o experimento foi conduzido durante uma semana em que os alunos não tinham aula (popularmente conhecida na instituição como semana de \textit{break}). Com auxílio do professor responsável pela disciplina de desenvolvimento em software livre, os alunos foram instruídos uma semana antes da semana de \textit{break} sobre como o experimento deveria ser realizado em casa. O tutorial e o contato dos pesquisadores responsáveis pela pesquisa foram disponibilizados para os alunos, caso eles tivessem alguma dúvida. Nesta segunda versão do experimento, cada aluno ficou responsável por identificar as categorias em cinco projetos de software livre distintos, sendo que quinze alunos participaram do experimento, totalizando setenta e cinco planilhas analisadas. Todos foram convidados a submeter críticas ou sugestões para novas versões do experimento, porém nenhuma resposta quanto a isso foi recebida.
 
-
+Além da planilha, o professor da USP também solicitou aos alunos que descrevessem as principais dificuldades enfrentadas durante a contribuição com projetos de software livre em sua disciplina, e diários contendo as dificuldades que estes enfrentaram foram compartilhadas junto as planilhas aos pesquisadores responsáveis por esta pesquisa, para eventual análise. Ao final da execução, cento e dezoito planilhas foram analisados por alunos de ambas as universidades. As seções a seguir, apresentam as duas últimas etapas ainda não executadas para neste método. 
 
 \subsection{Modelo de classificação}
 \label{sec:classificacao}
-Para que seja possível automatizar o processo de identificação das categorias em documentações de projetos de software livre, um modelo de classificação será proposto como parte resultante desta pesquisa. A elaboração deste modelo deverá ocorrer em três etapas: Na primeira etapa, as planilhas analisadas pelos alunos durante o estudo empírico serão convertidas em valores que possam ser interpretados por algoritmos de classificação. Na segunda etapa, um conjunto de algoritmos de classificação serão treinados com as categorias e parágrafos analisados pelos participantes. Por fim, na terceira etapa, um processo de validação será executado, de modo a encontrar o algoritmo de classificação que melhor identifique as categorias em documentações de projetos de software livre. Uma ilustração dos passos é apresentada na Figura \ref{fig:metodo-classif}.
+Para que seja possível automatizar o processo de identificação das categorias em documentações de projetos de software livre, um modelo de classificação será proposto como parte resultante desta pesquisa. A elaboração deste modelo acontecerá em três etapas: Na primeira etapa, as planilhas analisadas pelos alunos durante o estudo empírico serão convertidas em valores que possam ser interpretados por algoritmos de classificação. Na segunda etapa, um conjunto de algoritmos de classificação serão treinados com as categorias e parágrafos analisados pelos participantes. Por fim, na terceira etapa, um processo de validação será executado, de modo a encontrar o algoritmo de classificação que melhor identifique as categorias em documentações de projetos de software livre. Uma ilustração dos passos a serem executados é apresentada na Figura \ref{fig:metodo-classif}.
 
 \begin{figure}
     \includegraphics[width=0.8\textwidth]{figuras/metodo_classif.pdf}
@@ -71,14 +175,14 @@ Para que seja possível automatizar o processo de identificação das categorias
 \end{figure}
 
 \subsubsection{Preparação dos dados}
-A preparação dos dados consistirá em dividir o conteúdo das planilhas entre características e rótulos para classificação. Neste estudo, consideraremos como características os parágrafos das planilhas analisadas pelos alunos, e rótulos as categorias que eles identificarem para cada um dos parágrafos. Como algoritmos de classificação só são capazes de compreender valores numéricos, os parágrafos serão convertidos em valores estatísticos e heurísticos. Serão considerados como valores estatísticos, a transformação dos parágrafos em características TF-IDF obtidas com o uso de bibliotecas de aprendizado de máquina. Os valores heurísticos serão obtidos por meio de análise manual dos parágrafos e categorias marcadas. Quando um padrão linguístico que associe parágrafos a uma categoria for identificado pelo pesquisador, um novo valor heurístico será gerado como característica para classificação. 
+A preparação dos dados consistirá em dividir o conteúdo das planilhas entre características e rótulos para classificação. Neste estudo, serão considerados como características os parágrafos das planilhas analisadas pelos alunos, e rótulos as categorias que eles identificaram para cada um dos parágrafos. Como algoritmos de classificação só são capazes de compreender valores numéricos, os parágrafos serão convertidos em valores estatísticos e heurísticos. Serão considerados como valores estatísticos, a transformação dos parágrafos em características TF-IDF obtidas com o uso de bibliotecas de aprendizado de máquina. Os valores heurísticos serão obtidos por meio de análise manual dos parágrafos e categorias marcadas. Quando um padrão linguístico que associe parágrafos a uma categoria for identificado pelo pesquisador, um novo valor heurístico será gerado como característica para classificação. 
 
 A ideia de valores heurísticos emergiu do estudo realizado por \citet{prana2019categorizing} que identificou, por exemplo, que a categoria "cabeçalho da documentação" proposta em seu estudo poderia ser identificada pela ocorrência do título do repositório de código na documentação analisada. Caso as características obtidas a partir destas duas estratégias não sejam suficientes, outras estratégias poderão ser aplicadas nos dados obtidos a partir das planilhas. As marcações das categorias feitas pelos alunos serão convertidos em uma matriz binária de rótulos, seguindo a mesma estrutura disposta nas planilhas. Além da divisão entre rótulos e características para classificação, os valores convertidos também serão divididos em conjunto de treino, validação e teste, a serem utilizados nas etapas seguintes.
 
 \subsubsection{Treinamento}
 A etapa de treinamento será responsável pela construção do modelo de classificação que identificará categorias relevantes a novatos em documentações de software livre. Como foi estabelecido que mais de uma categoria poderá ocorrer para um mesmo trecho de documentação, classificadores multi-rótulos serão utilizados para treinamento dos modelos de classificação. Dado que a classificação multi-rótulos tende a ser mais complexa que outros tipos de aprendizagem, a estratégia de relevância binária será utilizada durante toda a etapa de treinamento. Na relevância binária, um problema de classificação com múltiplas classes como este, é transformado em problemas de classificação binária. Em outras palavras, o algoritmo de aprendizagem, ao invés de tentar identificar matematicamente todos as categorias de uma única vez nos trechos de documentação, tentará identifica-las separadamente, unindo os resultados ao final do processo. Esta é uma estratégia comumente utilizada por outros estudos que envolvam problemas multi-rótulos e classificação de textos como este. Durante o treinamento, o conjunto de treino será utilizado para alimentar os modelos de classificação.
 
-Entre os algoritmos de aprendizado a serem treinados, se encontram: Random Forest (RF), Linear Support Vector Machine (SVM), Multinomial Naive Bayes (NB), K-Neighbors (kNN), Logistic Regression (LR), Multi-layer Perceptron (MLP), Linear Support Vector Machine + Stochastic Gradient Descent Learning (SGD). Estes algoritmos foram selecionados com base no que vem sendo utilizado por trabalhos relacionados, em especial, os estudos propostos por \citet{prana2019categorizing} e \citet{panichella2015how}. Além de trabalhos relacionados, os algoritmos MLP e SGD são recomendações propostas por desenvolvedores da Google\footnote{developers.google.com/machine-learning/guides/text-classification} e Scikit-learn\footnote{scikit-learn.org/stable/tutorial/machine$\_$learning$\_$map}, respectivamente.3
+Entre os algoritmos de aprendizado a serem treinados, se encontram: Random Forest (RF), Linear Support Vector Machine (SVM), Multinomial Naive Bayes (NB), K-Neighbors (kNN), Logistic Regression (LR), Multi-layer Perceptron (MLP), Linear Support Vector Machine + Stochastic Gradient Descent Learning (SGD). Estes algoritmos foram selecionados com base no que vem sendo utilizado por trabalhos relacionados, em especial, os estudos propostos por \citet{prana2019categorizing} e \citet{panichella2015how}. Além de trabalhos relacionados, os algoritmos MLP e SGD são recomendações propostas por desenvolvedores da Google\footnote{\url{developers.google.com/machine-learning/guides/text-classification}} e Scikit-learn\footnote{\url{scikit-learn.org/stable/tutorial/machine$\_$learning$\_$map}}, respectivamente.
 
 \subsubsection{Validação}
 Na etapa de validação, os modelos treinados serão avaliados a fim de se obter aquele que melhor identifique as categorias desejadas. Para isso, duas estrateǵias serão combinadas, validação cruzada e métricas de acurácia. Na estratégia de validação cruzada, diversos conjuntos de treino e validação serão gerados a partir dos dados das planilhas, e estes serão avaliados por um algoritmo de validação \textit{k-fold} a fim de compreender quais modelos de classificação gerados são capazes de generalizar o problema desejado. Além da validação cruzada, métricas de acurácia serão utilizadas, em especial, \textit{precision}, \textit{recall} e \textit{f-measure}, todas amplamente conhecidas e utilizadas por demais trabalhos envolvendo problemas de classificação. Estas métricas irão avaliar utilizando conjuntos de treino e validação pré-estabelecidos a acurácia do classificador. O modelo que obtiver os melhores resultados será submetido a etapa de avaliação (Seção \ref{sec:avaliacao}), e também será deste modelo em que as métricas de acurácia serão extraídas para apresentação dos resultados por meio do conjunto de teste.  

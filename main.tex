@@ -240,30 +240,30 @@
 % Sem esta linha, a palavra "Apêndices" no sumário ficava no final da
 % primeira página; assim, forçamos uma quebra de página antes. Dependendo
 % do formato final do seu sumário, você pode manter ou remover esta linha.
-\addtocontents{toc}{\newpage}
-\appendix
+%\addtocontents{toc}{\newpage}
+%\appendix
 
 %\input{conteudo-exemplo/apendices}
-\input{conteudo/apendices}
-\par
+%\input{conteudo/apendices}
+%\par
 
 %%%% Anexos %%%%
-\makeatletter
-\if@openright\cleardoublepage\else\clearpage\fi
-\makeatother
+%\makeatletter
+%\if@openright\cleardoublepage\else\clearpage\fi
+%\makeatother
 
 % Este formato está definido na package imeusp-headers (note que é o mesmo
 % que o anterior; repetimos aqui caso você queira desabilitar toda a seção
 % de apêndices).
-\pagestyle{appendix}
+%\pagestyle{appendix}
 
 % Como em "Apêndices", você pode manter ou remover esta linha.
 %\addtocontents{toc}{\newpage}
-\annex
+%\annex
 
 %\input{conteudo-exemplo/anexos}
-\input{conteudo/anexos}
-\par
+%\input{conteudo/anexos}
+%\par
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SEÇÕES FINAIS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -296,6 +296,6 @@
 ]
 
 % imprime o índice remissivo no documento (opcional)
-\printindex
+%\printindex
 
 \end{document}
