@@ -35,16 +35,11 @@ def export_classification_report(model, X_test, y_test, results_dir):
         json.dump(report, report_file, indent=4)
 
 def export_confusion_matrix(model, X_test, y_test):
-    classes = ['No categories identified.',
-                'CF - Contribution flow',
-               'CT – Choose a task',
-               'TC – Talk to the community',
-               'BW – Build local workspace',
-               'DC – Deal with the code',
-               'SC – Submit the changes']
+    classes = ['NC', 'CF', 'ET', 'CC', 'CA', 'LC', 'SM']
 
-    labels = [category[:2] for category in classes]
-    plot_confusion_matrix(model, X_test, y_test, display_labels=labels, cmap=plot.cm.Blues)
+    display = plot_confusion_matrix(model, X_test, y_test, display_labels=classes, cmap=plot.cm.Blues)
+    display.ax_.set_ylabel('Categoria Esperada')
+    display.ax_.set_xlabel('Categoria Prevista')
     plot.show()
 
 
@@ -65,15 +60,15 @@ def export_learning_curve(classifier, strategy, oversample, X_train, y_train):
     test_mean = np.mean(test_scores, axis=1)
     test_std = np.std(test_scores, axis=1)
 
-    plt.plot(train_sizes, train_mean, color="blue", marker="o", markersize=5, label="Training Accuracy")
+    plt.plot(train_sizes, train_mean, color="blue", marker="o", markersize=5, label="Acurácia (Treino)")
     plt.fill_between(train_sizes, train_mean + train_std, train_mean - train_std, alpha=0.15, color='blue')
 
-    plt.plot(train_sizes, test_mean, color='green', marker='+', markersize=5, linestyle='--', label='Validation Accuracy')
+    plt.plot(train_sizes, test_mean, color='green', marker='+', markersize=5, linestyle='--', label='Acurácia (Validação)')
     plt.fill_between(train_sizes, test_mean + test_std, test_mean - test_std, alpha=0.15, color='green')
 
-    plt.xlabel("Trainining Data Size")
-    plt.ylabel("Model Accuracy")
-    plt.title('Learning Curve')
+    plt.xlabel("Quantidade de dados para treino")
+    plt.ylabel("Acurácia do modelo")
+    plt.title('Curva de aprendizagem')
     plt.grid()
     plt.legend(loc="best")
     plt.show()

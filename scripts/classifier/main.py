@@ -50,7 +50,7 @@ def find_best_estimator(X_train, y_train, results_dir):
     # 'rf' for Random Forest
     # 'dmr' for Dummy Classifier (Random)
     # 'dmf' for Dummy Classifier (Always the most frequent)
-    classifiers = ['dmr', 'svc', 'mnb', 'knn', 'lr', 'rf', 'dmf'] # 
+    classifiers = ['dmr', 'svc', 'mnb', 'knn', 'lr', 'rf', 'dmf']
 
     # Strategies available:
     # 'ovr' for OneVsRest
@@ -234,10 +234,10 @@ if __name__ == '__main__':
     results_dir = os.path.join(repository_dir, 'results') 
     # repository/data/documentation/spreadsheets/
     spreadsheets_dir = os.path.join(data_dir, 'documentation', 'spreadsheets')
-    # repository/data/documentation/spreadsheets/valid
-    training_spreadsheets_dir = os.path.join(spreadsheets_dir, 'for-training')
-    # repository/data/documentation/spreadsheets/for-prediction
-    survey_spreadsheets_dir = os.path.join(spreadsheets_dir, 'for-survey')
+    # repository/data/documentation/spreadsheets/training
+    training_spreadsheets_dir = os.path.join(spreadsheets_dir, 'training')
+    # repository/data/documentation/spreadsheets/survey
+    survey_spreadsheets_dir = os.path.join(spreadsheets_dir, 'survey')
 
     ###########
     # Stage 1 #
