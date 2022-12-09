@@ -81,4 +81,4 @@ def import_data_for_prediction(spreadsheets_dir, data_dir):
                                    classes_columns, train_filepath, test_filepath,
                                    label_column)
 
-    return import_sets(train_filepath, test_filepath, text_column, label_column, True)
+    return import_sets(train_filepath, test_filepath, text_column, label_column, is_predict = True)

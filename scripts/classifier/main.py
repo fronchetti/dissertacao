@@ -146,43 +146,41 @@ def train_final_estimator(X_train, y_train, X_test, y_test):
     # Dumps the model to a file for future predictions.
     pickle.dump(model, open('final_estimator.sav', 'wb'))
 
-def predict_survey_spreadsheets(spreadsheets_dir, predict_spreadsheets_dir, results_dir, n_samples):
+def move_random_spreadsheets_to_folder(root_dir, output_dir, n_samples):
+    # Finds a spreadsheet in the root spreadsheet folder that is not
+    # being used, and copies it to a new folder of spreadsheets
+    # to be predicted. The outer loop stops when a number of
+    # n_samples is satisfied.
+    # We used this method to select spreadsheets to compose the
+    # dataset of predictions in our survey.
+
+    for i in range(0, n_samples):
+        while True:
+            filename = random.choice(os.listdir(root_dir))
+            filepath = os.path.join(root_dir, filename)
+            copy_filepath = os.path.join(output_dir, filename)
+
+            if os.path.isfile(filepath) and not os.path.exists(copy_filepath):
+                shutil.copyfile(filepath, copy_filepath)
+                os.remove(filepath)
+                break
+
+def predict_spreadsheets(spreadsheets_dir, results_dir):
     """Using the final version of the best estimator (See train_final_estimator), 
     this method is used to predict the classes of new data samples.
-
-    This method is used in our survey where participants evaluate
-    if our classifications make sense or not.
 
     Args:
         spreadsheets_dir (String): Folder where spreadsheets are located.
         Notice that such spreadsheets should not be used to train the
         classifier in the previous steps. In other works, they should
         be unknown to the final estimator.
-        predict_spreadsheets_dir (String): Folder where a copy
-        of such spreadsheets will be saved. 
         results_dir (String): Folder where the predictions will
         be saved.
-        n_samples (Integer): Number of spreadsheets to be predicted.
     """
-
-    # Finds a spreadsheet in the spreadsheet folder that is not
-    # being used, and copies it to a new folder of spreadsheets
-    # to be predicted. The outer loop stops when a number of
-    # n_samples is satisfied.
-
-    for i in range(0, n_samples):
-        while True:
-            filename = random.choice(os.listdir(spreadsheets_dir))
-            filepath = os.path.join(spreadsheets_dir, filename)
-            copy_filepath = os.path.join(predict_spreadsheets_dir, filename)
-
-            if os.path.isfile(filepath) and not os.path.exists(copy_filepath):
-                shutil.copyfile(filepath, copy_filepath)
-                break
 
     # We use the same method using during the training process of an estimator
     # to parse the data from the spreadsheets to be predicted.
-    X_train, _, X_test, _, train_text_column, test_text_column = import_data_for_prediction(predict_spreadsheets_dir, data_dir)
+    X_train, _, X_test, _, train_text_column, test_text_column = import_data_for_prediction(spreadsheets_dir, data_dir)
 
     # Merge training and test samples. Notice that this data
     # will not be used for training but only for prediction.
@@ -235,9 +233,11 @@ if __name__ == '__main__':
     # repository/data/documentation/spreadsheets/
     spreadsheets_dir = os.path.join(data_dir, 'documentation', 'spreadsheets')
     # repository/data/documentation/spreadsheets/training
-    training_spreadsheets_dir = os.path.join(spreadsheets_dir, 'training')
+    training_spreadsheets_dir = os.path.join(spreadsheets_dir, 'for-training')
     # repository/data/documentation/spreadsheets/survey
-    survey_spreadsheets_dir = os.path.join(spreadsheets_dir, 'survey')
+    survey_spreadsheets_dir = os.path.join(spreadsheets_dir, 'for-survey')
+    # repository/data/documentation/spreadsheets/survey
+    analysis_spreadsheets_dir = os.path.join(spreadsheets_dir, 'for-analysis')
 
     ###########
     # Stage 1 #
@@ -271,4 +271,5 @@ if __name__ == '__main__':
     # Train the final classification with all data and dump the model
     # train_final_estimator(X_train, y_train, X_test, y_test)
     # Predict samples using the final model for the survey evaluation
-    # predict_survey_spreadsheets(spreadsheets_dir, survey_spreadsheets_dir, results_dir, 75)
+    # move_random_spreadsheets_to_folder(spreadsheets_dir, survey_spreadsheets_dir, 75)
+    # predict_survey_spreadsheets(survey_spreadsheets_dir, results_dir)
