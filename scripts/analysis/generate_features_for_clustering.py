@@ -13,7 +13,7 @@ if __name__ == '__main__':
     spreadsheets = dataframe.groupby('spreadsheet')
 
     with open('cluster_features.csv', 'w', encoding='utf-8', newline='') as features_file:
-        fields = ['n_CF', 'n_CT', 'n_TC', 'n_BW', 'n_DC', 'n_SC', 'n_NC', 'n_paragraphs', 'paragraph_0p', 'paragraph_25p', 'paragraph_75p', 'paragraph_100p']
+        fields = ['n_CF', 'n_CT', 'n_TC', 'n_BW', 'n_DC', 'n_SC', 'n_NC', 'n_paragraphs', 'paragraph_0p', 'paragraph_25p', 'paragraph_75p', 'paragraph_100p', 'filename']
         writer = csv.DictWriter(features_file, fieldnames=fields)
         writer.writeheader()
 
@@ -33,5 +33,6 @@ if __name__ == '__main__':
             csv_row['n_DC'] = categories_count['DC - Deal with the code'] if 'DC - Deal with the code' in categories_count else 0
             csv_row['n_SC'] = categories_count['SC - Submit the changes'] if 'SC - Submit the changes' in categories_count else 0
             csv_row['n_NC'] = categories_count['No categories identified.'] if 'No categories identified.' in categories_count else 0
+            csv_row['filename'] = filename
 
             writer.writerow(csv_row)
