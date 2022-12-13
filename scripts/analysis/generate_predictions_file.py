@@ -168,11 +168,8 @@ if __name__ == '__main__':
     results_dir = os.path.join(repository_dir, 'results') 
     # repository/data/documentation/spreadsheets/
     spreadsheets_dir = os.path.join(data_dir, 'documentation', 'spreadsheets')
-    # repository/data/documentation/spreadsheets/survey
-    analysis_spreadsheets_dir = os.path.join(spreadsheets_dir, 'for-analysis')
-
-    if not os.path.isdir('predictions'):
-        os.makedirs('predictions')
+    # repository/data/documentation/spreadsheets/for-prediction
+    analysis_spreadsheets_dir = os.path.join(spreadsheets_dir, 'for-prediction')
 
     predictions_data = []
 

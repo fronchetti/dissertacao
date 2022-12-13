@@ -397,6 +397,7 @@ n_CF,n_CT,n_TC,n_BW,n_DC,n_SC,n_NC,n_paragraphs,paragraph_0p,paragraph_25p,parag
 1,0,0,0,1,3,18,22,No categories identified.,SC - Submit the changes,No categories identified.,No categories identified.,ZieIony@Carbon.xlsx
 2,0,1,1,1,0,5,9,No categories identified.,DC - Deal with the code,CF - Contribution flow,BW - Build local workspace,ZoneMinder@zoneminder.xlsx
 3,0,0,3,3,16,7,31,No categories identified.,SC - Submit the changes,SC - Submit the changes,SC - Submit the changes,Zulko@moviepy.xlsx
+0,0,2,0,0,5,2,8,No categories identified.,SC - Submit the changes,SC - Submit the changes,TC - Talk to the community,deepmind@trfl.xlsx
 1,0,0,0,1,5,6,12,No categories identified.,No categories identified.,SC - Submit the changes,CF - Contribution flow,deezer@spleeter.xlsx
 10,0,2,1,6,22,51,91,No categories identified.,No categories identified.,No categories identified.,No categories identified.,defold@defold.xlsx
 1,0,0,2,0,9,4,15,No categories identified.,CF - Contribution flow,SC - Submit the changes,SC - Submit the changes,defunkt@jquery-pjax.xlsx
@@ -506,6 +507,7 @@ n_CF,n_CT,n_TC,n_BW,n_DC,n_SC,n_NC,n_paragraphs,paragraph_0p,paragraph_25p,parag
 1,0,0,4,1,12,9,26,No categories identified.,BW - Build local workspace,No categories identified.,SC - Submit the changes,elbywan@wretch.xlsx
 0,0,0,0,4,3,14,20,No categories identified.,No categories identified.,DC - Deal with the code,SC - Submit the changes,electerious@Lychee.xlsx
 0,0,0,3,5,22,31,60,No categories identified.,No categories identified.,SC - Submit the changes,SC - Submit the changes,electron@electron-packager.xlsx
+3,0,2,1,2,8,24,39,No categories identified.,No categories identified.,CF - Contribution flow,No categories identified.,electron@electron.xlsx
 0,0,0,4,1,10,15,29,No categories identified.,No categories identified.,DC - Deal with the code,No categories identified.,electron@fiddle.xlsx
 1,0,0,2,5,12,11,30,No categories identified.,No categories identified.,No categories identified.,No categories identified.,electronicarts@EASTL.xlsx
 0,1,1,13,8,11,30,63,No categories identified.,BW - Build local workspace,No categories identified.,SC - Submit the changes,elementary@website.xlsx
@@ -564,6 +566,7 @@ n_CF,n_CT,n_TC,n_BW,n_DC,n_SC,n_NC,n_paragraphs,paragraph_0p,paragraph_25p,parag
 1,0,0,0,0,10,8,18,No categories identified.,No categories identified.,No categories identified.,SC - Submit the changes,facebook@folly.xlsx
 5,0,0,2,5,16,12,39,No categories identified.,CF - Contribution flow,SC - Submit the changes,SC - Submit the changes,facebook@fresco.xlsx
 1,0,1,0,4,15,12,32,No categories identified.,CF - Contribution flow,No categories identified.,SC - Submit the changes,facebook@hermes.xlsx
+2,1,0,0,0,6,6,14,No categories identified.,No categories identified.,SC - Submit the changes,No categories identified.,facebook@hhvm.xlsx
 9,0,2,20,17,31,24,102,No categories identified.,BW - Build local workspace,No categories identified.,SC - Submit the changes,facebook@jest.xlsx
 2,0,0,7,4,14,14,40,No categories identified.,BW - Build local workspace,No categories identified.,SC - Submit the changes,facebook@litho.xlsx
 2,0,0,0,0,10,6,17,No categories identified.,SC - Submit the changes,No categories identified.,SC - Submit the changes,facebook@mcrouter.xlsx
