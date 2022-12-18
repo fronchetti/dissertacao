@@ -4,7 +4,7 @@
 import streamlit as page
 from about_section import write_about_section
 from motivation_section import write_motivation_section
-from analysis_section import write_contributing_analysis
+from classifier_section import write_contributing_analysis
 
 page.set_page_config(
      page_title="CONTRIBUTING.info",
@@ -64,8 +64,7 @@ with motivation:
 
 with classifier:
     repository_url = page.text_input("What GitHub repository would you like to\
-                 analyze?", help="Please provide a valid URL to the repository\
-                 hosted on GitHub that you would like to analyze.", 
+                 analyse?", help="The URL must refer to a public repository hosted on GitHub with a CONTRIBUTING.md file.", 
                  placeholder="https://github.com/github/docs/", max_chars=2048)
 
     with page.spinner("Parsing documentation file..."):

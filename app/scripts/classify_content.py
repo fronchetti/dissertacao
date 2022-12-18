@@ -11,7 +11,7 @@ def get_contributing_predictions(page, repository_url):
     try:
         if len(repository_url) > 0:
             if 'github.com' not in repository_url:
-                raise URLError('URL must belong to GitHub.')
+                raise URLError('The URL must refer to a public repository hosted on GitHub with a CONTRIBUTING.md file.')
 
             paragraphs = get_contributing_file(repository_url)
 
@@ -23,9 +23,15 @@ def get_contributing_predictions(page, repository_url):
                 predictions = model.predict(convert_paragraphs_into_features(paragraphs))
 
                 return paragraphs, predictions
-    except Exception as e:
-        print(e)
-        page.error("The URL provided does not refer to a public repository\
-                   on GitHub with a valid contribution file.")
+    except URLError as url_exception:
+        page.error(url_exception.reason)
+    except ConnectionError as conn_exception:
+        page.warning(conn_exception)
+    except TypeError as type_exception:
+        page.warning(type_exception)
+    except Exception as generic_exception:
+        page.error("Something went wrong. Please report this issue in our repository.\n")
+        page.warning("Traceback: " + str(generic_exception))
+
 
     return [], []

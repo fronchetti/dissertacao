@@ -1,15 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import os
-import time
 import requests
-import logging
 from datetime import datetime
 from urllib3.util.retry import Retry
 from requests.adapters import HTTPAdapter
-
-logging.getLogger("urllib3").setLevel(logging.WARNING)
 
 class Create:
     def __init__(self):
@@ -42,27 +37,23 @@ class Create:
         
         try:
             session = requests.Session()
-            session.auth = (os.getenv('GITHUB_USER'), os.getenv('GITHUB_TOKEN'))
+            # session.auth = (os.getenv('GITHUB_USER'), os.getenv('GITHUB_TOKEN'))
             retries = Retry(total = 10)
             session.mount('https://', HTTPAdapter(max_retries=retries))
             response = session.get(url, params=parameters, headers=headers)
+            
+            if response.status_code != 200:
+                raise Exception("Problem in connection with GitHub API (Status: " + str(response.status_code) + ").")
 
             self.verify_rate_limit(response.headers)
 
             if file_type == 'json':
                 return response.json()
-            if file_type == 'text':    
+            if file_type == 'text':   
                 return response.text
 
-        except requests.exceptions.ConnectionError as connection_error:
-            logging.basicConfig(filename='exceptions.log', level=logging.DEBUG)
-            logging.info('Connection error in api_scraper.py.')
-            logging.exception(connection_error)
-
-        except requests.exceptions.RequestException as request_exception:
-            logging.basicConfig(filename='exceptions.log', level=logging.DEBUG)
-            logging.info('Exception caught in api_scraper.py')
-            logging.exception(request_exception)
+        except Exception as exception:
+            raise(exception)
 
     def verify_rate_limit(self, header):
         """Guarantees that there is a limit of requests remaining to the GitHub API.
@@ -84,13 +75,8 @@ class Create:
             datetime_format = '%Y-%m-%d %H:%M:%S'
             reset_time = datetime.fromtimestamp(self.rate_limit_reset).strftime(datetime_format)
             current_time = datetime.now().strftime(datetime_format)
-            remaining_seconds = (datetime.fromtimestamp(self.rate_limit_reset) - datetime.now()).total_seconds() + 5
-            
-            # print('[API] Requests Remaining: {}'.format(self.rate_limit_remaining))
+            minutes_remaining = int((datetime.fromtimestamp(self.rate_limit_reset) - datetime.now()).total_seconds() / 60)
 
             if self.rate_limit_remaining <= 1:
-                if reset_time > current_time:
-                    print('The request limit is over. The process will sleep for\
-                           %d seconds.' % remaining_seconds)
-                    print('The request limit will reset on: {}'.format(reset_time))
-                    time.sleep(remaining_seconds)
+                if reset_time >= current_time:
+                    raise ConnectionError("Sorry, our request limit for GitHub API is over. Wait " + str(minutes_remaining) +  " minutes and try again.")
