@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import os
 import requests
 from datetime import datetime
 from urllib3.util.retry import Retry
@@ -37,15 +38,14 @@ class Create:
         
         try:
             session = requests.Session()
-            # session.auth = (os.getenv('GITHUB_USER'), os.getenv('GITHUB_TOKEN'))
+            session.auth = (os.getenv('GITHUB_USER'), os.getenv('GITHUB_TOKEN'))
             retries = Retry(total = 10)
             session.mount('https://', HTTPAdapter(max_retries=retries))
             response = session.get(url, params=parameters, headers=headers)
-            
+            self.verify_rate_limit(response.headers)
+
             if response.status_code != 200:
                 raise Exception("Problem in connection with GitHub API (Status: " + str(response.status_code) + ").")
-
-            self.verify_rate_limit(response.headers)
 
             if file_type == 'json':
                 return response.json()
