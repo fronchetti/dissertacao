@@ -24,4 +24,6 @@ Para quaisquer dúvidas sobre este estudo, por favor entre em contato via e-amai
 * Orientador, Marco Gerosa (marco.gerosa@nau.edu)
 * Co-orientador, Igor Steinmacher (igorfs@utfpr.edu.br)
 
-Nota: A grande maioria dos arquivos desta pesquisa estão documentados em Inglês. Caso o leitor tenha qualquer dúvida a respeito de algo, sinta-se livre para entrar em contato. É minha obrigação como pesquisador garantir a transparência deste trabalho.
+# Notas
+* A grande maioria dos arquivos desta pesquisa estão documentados em Inglês. Caso o leitor tenha qualquer dúvida a respeito de algo, sinta-se livre para entrar em contato. É minha obrigação como pesquisador garantir a transparência deste trabalho.
+* Durante o desenvolvimento desta pesquisa o aluno recebeu auxílio financeiro da FAPESP (18/02596-1). Meus sinceros agradecimentos!
