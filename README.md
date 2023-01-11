@@ -22,4 +22,3 @@ Para quaisquer dúvidas sobre este estudo, por favor entre em contato via e-amai
 * Aluno, Felipe Fronchetti (fronchettl@vcu.edu)
 * Orientador, Marco Gerosa (marco.gerosa@nau.edu)
 * Co-orientador, Igor Steinmacher (igorfs@utfpr.edu.br)
-* Co-orientador, Igor Wiese (igor@utfpr.edu.br)
