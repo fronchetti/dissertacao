@@ -1,7 +1,7 @@
 # Sobre
 *This dissertation is written in Portuguese. For the paper version in English, please visit: .*
 
-Pacote de replicação para minha dissertação de mestrado em Ciência da Computação pela Universidade de São Paulo.
+Pacote de replicação da minha dissertação de mestrado em Ciência da Computação pela Universidade de São Paulo.
 
 # Estrutura do repositório
 Este repositório está dividido em pastas da seguinte maneira:
