@@ -9,3 +9,5 @@ This folder is organized as follows:
 - The `images` folder contains the charts generated using Excel. You will find also a customizable version of each chart in PowerPoint.
 - Inside the `survey` folder you will find the data from participants who responded to our online questionnaire. 
 - The spreadsheet `documentation_analysis.xlsx` file contains the overall analysis we made for this paper based on the values we gathared through the entire method. Each worksheet is supposed to be as simple as possible, so I hope you don't struggle with it.
+
+If you have any questions, don't hesitate to contact me at: fronchettl@vcu.edu.
