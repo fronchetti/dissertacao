@@ -5,5 +5,4 @@ If you are interested in this application, give it a try at: https://contributin
 Newer releases of this application are being committed to: https://github.com/fronchetti/contributing.info/
 
 # Acknowledgment
-This application is being hosted through Streamlit Cloud for free.  
-We thank the maintainer of Streamlit for their services.
+This application is being hosted through Streamlit Cloud for free. We thank the maintainers of Streamlit for their services.
