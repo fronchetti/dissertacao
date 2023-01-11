@@ -7,7 +7,7 @@ significant enough to result in a good classification performance.
 
 Considering the time and availability constraints to analyze more data, 
 the authors decided to change the strategy of analysis. At the end,
-two authors analyzed the spreadsheets that you may find in the data folder. 
+two authors analyzed the spreadsheets available in the data folder. 
 None of the worksheets analyzed by the students were used, although they are
 publicly available in this folder for clarity.
 
