@@ -11,7 +11,7 @@ Se você for um pesquisador interessado em contribuir com este estudo, por favor
 - Igor Wiese (igor@utfpr.edu.br)
 
 
-# (English) Welcome
+# Welcome
 Thank you so much for your interest in our study. This repository is available as a replication package for my dissertation, which means that
 we are not looking for code collaborations at the moment. 
 
