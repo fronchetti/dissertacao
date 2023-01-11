@@ -14,10 +14,10 @@ Este repositório está dividido em pastas da seguinte maneira:
 - [**misc**](https://github.com/fronchetti/dissertacao/tree/master/misc): Esta pasta contém arquivos diversos, sem categoria definida. Inclui basicamente as licenças dos icones utilizados na dissertação, e uma captura de tela do GitHub Octoverse.
 
 # Utilizando o modelo final
-We are glad you are interested in our classification model. The final model is available as a [`classification_model.sav`](https://github.com/fronchetti/dissertacao/tree/master/app/classifier) file inside the [`app`](https://github.com/fronchetti/dissertacao/tree/master/app/classifier) folder that you can load using Pickle. If you are not familiar with Pickle or don't know how to load a model, we recommend you to take a look at our code implementation inside the [`app`](https://github.com/fronchetti/dissertacao/tree/master/app/classifier) folder (`classify_content.py` is a good starting point).
+Agradecemos o seu interesse em nosso modelo de classificação. A versão final do modelo se encontra disponível através do arquivo serializado [`classification_model.sav`](https://github.com/fronchetti/dissertacao/tree/master/app/classifier) em Python, disponível na pasta [`app`](https://github.com/fronchetti/dissertacao/tree/master/app/classifier). Para utiliza-lo, recomenda-se o uso da biblioteca [`Pickle`](https://docs.python.org/3/library/pickle.html). Caso você não tenha familiaridade com a linguagem ou com aprendizado de máquina, analisar o modo como a identificação de parágrafos foi implementado em nossa ferramenta pode ser um bom começo. Veja o arquivo `classify_content.py` em  [`app`](https://github.com/fronchetti/dissertacao/tree/master/app/classifier).
 
 # Contato
-If you have any questions or are interested in contributing to this project, please don't hesitate to contact us:
+Para quaisquer dúvidas sobre este estudo, por favor entre em contato via e-amail:
 
 * Aluno, Felipe Fronchetti (fronchettl@vcu.edu)
 * Orientador, Marco Gerosa (marco.gerosa@nau.edu)
