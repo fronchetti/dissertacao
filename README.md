@@ -1,5 +1,5 @@
 # Sobre
-*This dissertation is written in Portuguese. For the paper version in English, please visit: .*
+*This dissertation is written in Portuguese. For the paper version in English, please visit our paper's [replication package](https://github.com/fronchetti/FSE-2023).*
 
 Pacote de replicação da minha dissertação de mestrado em Ciência da Computação pela Universidade de São Paulo.
 
