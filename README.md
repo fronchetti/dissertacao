@@ -22,8 +22,7 @@ Para quaisquer dúvidas sobre este estudo, por favor entre em contato via e-amai
 
 * Aluno, Felipe Fronchetti (fronchettl@vcu.edu)
 * Orientador, Marco Gerosa (marco.gerosa@nau.edu)
-* Co-orientador, Igor Steinmacher (igorfs@utfpr.edu.br)
 
 # Notas
 * A grande maioria dos arquivos desta pesquisa estão documentados em Inglês. Caso o leitor tenha qualquer dúvida a respeito de algo, sinta-se livre para entrar em contato. É minha obrigação como pesquisador garantir a transparência deste e de demais estudos.
-* Durante o desenvolvimento desta pesquisa o aluno recebeu auxílio financeiro da FAPESP (18/02596-1). Meus sinceros agradecimentos!
+* Durante o desenvolvimento desta pesquisa o aluno recebeu auxílio financeiro da FAPESP (18/02596-1). Meus sinceros agradecimentos a fundação!
